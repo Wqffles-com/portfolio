@@ -11,7 +11,7 @@ export default function Footer() {
       </p>
       <div className="footer__links">
         <a
-          href="https://discord.com/555443167244189697"
+          href="https://discord.com/users/555443167244189697"
           target="_blank"
           rel="noopener noreferrer"
           className="footer__link"
