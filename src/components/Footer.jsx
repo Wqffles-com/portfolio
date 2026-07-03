@@ -22,7 +22,7 @@ export default function Footer() {
           Discord
         </a>
         <a
-          href="https://github.com/Wqffles"
+          href="https://github.com/Wqffles-com"
           target="_blank"
           rel="noopener noreferrer"
           className="footer__link"
