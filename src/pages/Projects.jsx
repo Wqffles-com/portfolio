@@ -2,10 +2,10 @@ import './Projects.css';
 
 const PROJECTS = [
   {
-    name: 'AstroLink',
-    url: 'https://astrolink.cc',
+    name: 'AstroShare',
+    url: 'https://share.astrolink.cc',
     description: 'Share any file with a single link.',
-    stack: ['Next.js', 'Supabase', 'Cloudflare R2', 'Stripe'],
+    stack: ['Next.js', 'Postgres', 'Cloudflare R2', 'Stripe'],
     screenshot: '/astrolink-screenshot.png',
   },
 ];
