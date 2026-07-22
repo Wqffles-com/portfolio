@@ -39,8 +39,9 @@ export default function Experience() {
   const bots = [
     ['US Marshals Service', '200+', 'Infractions, promotions, shift management, and more', '10/10'],
     ["Extra's Basement", '400+', 'Roleplay commands, moderation commands, automod', '9/10'],
-    ['Nashville City Roleplay', '1000+', 'Department management, arrest logs, shifts for departments', '9/10'],
+    ['Nashville City Roleplay', '1,000+', 'Department management, arrest logs, shifts for departments', '9/10'],
     ['Veloce', '400+', 'Order management, billing, ticket system', '8/10'],
+    ['Softboys', '1,400+', 'Transcribing of audio files and voice messages', '10/10'],
   ];
 
   return (
