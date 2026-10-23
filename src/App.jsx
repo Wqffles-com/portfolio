@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
@@ -7,28 +8,39 @@ import Footer from './components/Footer';
 import Projects from './pages/Projects';
 import './App.css';
 
+const TITLES = {
+  '/': 'Charlie | Programmer & Discord Community Manager',
+  '/projects': 'Projects | Charlie',
+};
+
 function Home() {
   return (
     <>
       <Hero />
-      <hr className="divider" />
       <Experience />
-      <hr className="divider" />
       <Skills />
-      <hr className="divider" />
-      <Footer />
     </>
   );
 }
 
 export default function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    document.title = TITLES[pathname] ?? TITLES['/'];
+  }, [pathname]);
+
   return (
     <>
+      <a href="#main" className="skip-link">Skip to content</a>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-      </Routes>
+      <main id="main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
+      </main>
+      <Footer />
     </>
   );
 }

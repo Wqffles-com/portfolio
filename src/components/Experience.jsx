@@ -1,64 +1,70 @@
 import './Experience.css';
 
-function Table({ title, columns, rows }) {
+const MANAGEMENT = [
+  { server: 'New York State Roleplay', role: 'Director', members: 2000, work: 'Staff management, bot management, documents' },
+  { server: 'New York State Roleplay', role: 'Department Manager', members: 2000, work: 'Department professionalism, CAD management' },
+  { server: 'Florida State Roleplay', role: 'Co-Owner', members: 1400, work: 'Overseeing senior high ranks and staff professionalism' },
+  { server: 'Vexira Customs', role: 'High Rank', members: 400, work: 'Overseeing designers and design quality' },
+];
+
+const BOTS = [
+  { server: 'Softboys', members: 1400, work: 'Transcribes audio files and voice messages', rating: 10 },
+  { server: 'Nashville City Roleplay', members: 1000, work: 'Department management, arrest logs, shifts', rating: 9 },
+  { server: "Extra's Basement", members: 400, work: 'Roleplay and moderation commands, automod', rating: 9 },
+  { server: 'Veloce', members: 400, work: 'Order management, billing, tickets', rating: 8 },
+  { server: 'US Marshals Service', members: 200, work: 'Infractions, promotions, shift management', rating: 10 },
+];
+
+const MAX = 2000;
+
+function Bar({ members }) {
   return (
-    <div className="table-wrapper">
-      <h3 className="table__title">{title}</h3>
-      <div className="table__scroll">
-        <table className="table">
-          <thead>
-            <tr>
-              {columns.map((col, i) => (
-                <th key={i}>{col}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row, i) => (
-              <tr key={i}>
-                {row.map((cell, j) => (
-                  <td key={j}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+    <div className="bar" aria-hidden="true">
+      <span className="bar__fill" style={{ width: `${(members / MAX) * 100}%` }} />
     </div>
   );
 }
 
 export default function Experience() {
-  const management = [
-    ['New York State Roleplay', 'Director', '2,000+', 'Staff management, bot management, documents'],
-    ['New York State Roleplay', 'Department Manager', '2,000+', 'Department professionalism, CAD management'],
-    ['Florida State Roleplay', 'Co-Owner', '1,400+', 'Overseeing SHR, global professionalism within the staff team'],
-    ['Vexira Customs', 'High Ranking', '400+', 'Overseeing designers, ensuring quality of designs'],
-  ];
-
-  const bots = [
-    ['US Marshals Service', '200+', 'Infractions, promotions, shift management, and more', '10/10'],
-    ["Extra's Basement", '400+', 'Roleplay commands, moderation commands, automod', '9/10'],
-    ['Nashville City Roleplay', '1,000+', 'Department management, arrest logs, shifts for departments', '9/10'],
-    ['Veloce', '400+', 'Order management, billing, ticket system', '8/10'],
-    ['Softboys', '1,400+', 'Transcribing of audio files and voice messages', '10/10'],
-  ];
-
   return (
-    <section id="experience">
-      <p className="section__overline">Experience</p>
-      <h2 className="section__heading">Where I've worked</h2>
-      <div className="exp__grid">
-        <Table
-          title="🛡️ Community Management"
-          columns={['Server', 'Rank', 'Members', 'Expertise']}
-          rows={management}
-        />
-        <Table
-          title="🤖 Discord Bot Development"
-          columns={['Server', 'Members', 'Functions', 'Rating']}
-          rows={bots}
-        />
+    <section id="experience" aria-labelledby="experience-heading">
+      <h2 id="experience-heading" className="section__heading">Where I've worked</h2>
+      <p className="section__intro">
+        Bar length shows each server's member count, so you can see the scale of each community.
+      </p>
+
+      <div className="exp">
+        <div>
+          <h3 className="exp__title">Community management</h3>
+          <ul className="exp__list">
+            {MANAGEMENT.map((m) => (
+              <li key={m.role} className="exp__item">
+                <div className="exp__head">
+                  <strong>{m.server}</strong>
+                  <span className="exp__count">{m.members.toLocaleString('en-US')}+ members</span>
+                </div>
+                <Bar members={m.members} />
+                <p className="exp__meta"><span className="exp__role">{m.role}.</span> {m.work}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="exp__title">Discord bots I've built</h3>
+          <ul className="exp__list">
+            {BOTS.map((b) => (
+              <li key={b.server} className="exp__item">
+                <div className="exp__head">
+                  <strong>{b.server}</strong>
+                  <span className="exp__count">{b.members.toLocaleString('en-US')}+ members</span>
+                </div>
+                <Bar members={b.members} />
+                <p className="exp__meta">{b.work}. Client rating {b.rating}/10.</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
