@@ -1,0 +1,11 @@
+# Charlie
+
+> 16-year-old programmer and Discord community manager from the Netherlands. Builds websites and Discord bots; manages roleplay and design communities with up to 2,000+ members.
+
+## Pages
+- [Home](https://wqffles.com/): experience, community roles, Discord bots built, skills, contact
+- [Projects](https://wqffles.com/projects): AstroShare (https://share.astrolink.cc), file sharing with a single link, built with Next.js, Postgres, Cloudflare R2 and Stripe
+
+## Contact
+- GitHub: https://github.com/Wqffles-com
+- Discord: https://discord.com/users/555443167244189697

@@ -1,69 +1,14 @@
-/* ── Shared section styles ── */
-
-section {
-  padding: 64px 0;
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  padding: 10px 16px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 6px;
+  z-index: 10;
 }
 
-.section__overline {
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #a78bfa;
-  margin-bottom: 8px;
-}
-
-.section__heading {
-  font-size: clamp(24px, 4vw, 36px);
-  font-weight: 700;
-  color: var(--text-heading);
-  letter-spacing: -0.5px;
-  margin-bottom: 8px;
-}
-
-/* ── Divider ── */
-
-.divider {
-  height: 1px;
-  background: var(--border);
-  border: none;
-  margin: 0;
-}
-
-/* ── Buttons ── */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: var(--radius-sm);
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-family: inherit;
-}
-
-.btn--primary {
-  background: var(--gradient);
-  color: #fff;
-  box-shadow: 0 4px 20px rgba(124, 92, 252, 0.3);
-}
-
-.btn--primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 28px rgba(124, 92, 252, 0.4);
-}
-
-.btn--ghost {
-  background: transparent;
-  color: var(--text-heading);
-  border: 1px solid var(--border);
-}
-
-.btn--ghost:hover {
-  border-color: rgba(124, 92, 252, 0.4);
-  background: rgba(124, 92, 252, 0.05);
+.skip-link:focus {
+  top: 16px;
 }

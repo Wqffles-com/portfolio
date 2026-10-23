@@ -1,31 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 :root {
-  --bg: #0a0a0f;
-  --bg-card: #13131d;
-  --bg-card-hover: #1a1a2a;
-  --text: #a1a1b4;
-  --text-heading: #f1f1f6;
-  --text-muted: #6b6b80;
-  --border: #1e1e32;
-  --accent: #7c5cfc;
-  --accent-glow: rgba(124, 92, 252, 0.3);
-  --accent2: #38bdf8;
-  --gradient: linear-gradient(135deg, #7c5cfc 0%, #a855f7 40%, #38bdf8 100%);
-  --gradient-text: linear-gradient(135deg, #a78bfa 0%, #7c5cfc 40%, #38bdf8 100%);
-  --radius: 16px;
-  --radius-sm: 10px;
-  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.3);
-  --shadow-lg: 0 1px 2px rgba(0,0,0,0.5), 0 8px 40px rgba(124,92,252,0.08);
+  --paper: #eef0f5;
+  --surface: #ffffff;
+  --ink: #171a3b;
+  --muted: #545a78;
+  --rule: #cfd3e1;
+  --delft: #2747a8;
+  --orange: #e8590c;
 
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  color-scheme: dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  --display: 'Bricolage Grotesque', 'Arial Narrow', sans-serif;
+  --body: 'Atkinson Hyperlegible', system-ui, sans-serif;
+
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  color-scheme: light;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 *,
@@ -42,47 +33,90 @@ html {
 
 body {
   min-height: 100vh;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% -20%, rgba(124, 92, 252, 0.08), transparent),
-    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(56, 189, 248, 0.04), transparent),
-    var(--bg);
+  background: var(--paper);
 }
 
 #root {
-  max-width: 960px;
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 48px 24px 80px;
+  padding: 24px 24px 48px;
 }
 
 a {
-  color: var(--accent2);
-  text-decoration: none;
-  transition: color 0.2s;
+  color: var(--delft);
+  text-underline-offset: 3px;
 }
 
 a:hover {
-  color: #7dd3fc;
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 ::selection {
-  background: rgba(124, 92, 252, 0.3);
+  background: var(--delft);
   color: #fff;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
+section {
+  padding: 72px 0;
+  border-top: 2px solid var(--ink);
 }
 
-::-webkit-scrollbar-track {
-  background: var(--bg);
+.section__heading {
+  font-family: var(--display);
+  font-size: clamp(30px, 4.5vw, 44px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 3px;
+.section__intro {
+  max-width: 60ch;
+  color: var(--muted);
+  margin-bottom: 40px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #2a2a44;
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 6px;
+  border: 2px solid var(--ink);
+  text-decoration: none;
 }
 
+.btn--primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn--primary:hover {
+  background: var(--delft);
+  border-color: var(--delft);
+  color: #fff;
+}
+
+.btn--ghost {
+  color: var(--ink);
+}
+
+.btn--ghost:hover {
+  background: var(--surface);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+
+@media (max-width: 600px) {
+  :root { font-size: 16px; }
+  #root { padding: 16px 16px 40px; }
+  section { padding: 56px 0; }
+}
