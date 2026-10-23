@@ -6,12 +6,8 @@ import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
 import Projects from './pages/Projects';
+import { TITLES } from './titles';
 import './App.css';
-
-const TITLES = {
-  '/': 'Charlie | Programmer & Discord Community Manager',
-  '/projects': 'Projects | Charlie',
-};
 
 function Home() {
   return (
