@@ -4,7 +4,6 @@
 
 ## Pages
 - [Home](https://wqffles.com/): experience, community roles, Discord bots built, skills, contact
-- [Projects](https://wqffles.com/projects): AstroShare (https://share.astrolink.cc), file sharing with a single link, built with Next.js, Postgres, Cloudflare R2 and Stripe
 
 ## Contact
 - GitHub: https://github.com/Wqffles-com
