@@ -5,7 +5,6 @@ import Hero from './components/Hero';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
-import Projects from './pages/Projects';
 import { TITLES } from './titles';
 import './App.css';
 
@@ -33,7 +32,6 @@ export default function App() {
       <main id="main">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
         </Routes>
       </main>
       <Footer />

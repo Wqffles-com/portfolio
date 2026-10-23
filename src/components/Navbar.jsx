@@ -9,7 +9,6 @@ export default function Navbar() {
       <Link to="/" className="navbar__brand">Charlie</Link>
       <nav aria-label="Main">
         <NavLink to="/" end className={linkClass}>Home</NavLink>
-        <NavLink to="/projects" className={linkClass}>Projects</NavLink>
         <a href="#contact" className="navbar__link">Contact</a>
       </nav>
     </header>
